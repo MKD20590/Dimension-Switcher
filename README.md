@@ -15,7 +15,7 @@
 
 ##  📜Scripts and Features
 
-You are able to do many stuff in the game like walking, jumping, and switching dimension thanks to the following scripts.
+You are able to walk, jump, and switch dimension because of the following scripts.
 
 |  Script       | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
@@ -37,13 +37,13 @@ Currently in development phase
 <br>
 
 ## 🔴About
-Dimension Switcher is a 2D & 3D platformer game where you can try and play a level to enjoy the rhythm of a personally made music. Your objective is simple, to find Cooper the dog that is hiding somewhere in the level. I created all the scripts, assets, music and also created the level design. Here are some details about Run n Beat's development
+Dimension Switcher is a 2D & 3D platformer game where you can try and play a level to enjoy the rhythm of a personally made music. Your objective is simple, to find Cooper the dog that is hiding somewhere in the level. I created all the scripts, assets, music and also created the level design. Here are some details about Dimension Switcher's development
 <br>
 
 ## 📂Files description
 
 ```
-├── Dimension Switcher                # Contains everything needed for Run n Beat to work.
+├── Dimension Switcher                # Contains everything needed for Dimension Switcher to work.
    ├── Assets                         # Contains every assets that are integrated with unity to create the game, like the scripts and the art.
       ├── Animations                  # Contains every animation clip and animator controller that is used for the game.
       ├── Fonts                       # Contains every fonts used to the display the text in the game.
