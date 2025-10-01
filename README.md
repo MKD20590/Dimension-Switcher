@@ -1,21 +1,21 @@
-<table>
+<!-- <table>
   <tr>
     <td align="left" width="50%">
       <img width="100%" alt="gif1" src="https://github.com/user-attachments/assets/a01eef8e-4281-4a45-ba5e-da38af4e47fb">
     </td>
     <td align="right" width="50%">
-      <img width="100%" alt="gif2" src="https://github.com/user-attachments/assets/f96b78ce-3f23-4b2e-a17f-c7c1581d5cf5">
+      <img width="100%" alt="gif2" src="https://github.com/user-attachments/assets/043480aa-02ab-44d8-bcd9-1589c8b40121">
     </td>
   </tr>
 </table>
 
 <p align="center">
   <img width="100%" alt="gif3" src="https://github.com/user-attachments/assets/2882e5c3-3b05-4ca6-8a0e-6f1ca2bb0c76">
-</p>
+</p> -->
 
 ##  📜Scripts and Features
 
-You are able to do so many stuff in the game like walking, running, building, crafting, shooting, hunting, and so much more thanks to tons of scripting has been implemented to the game
+You are able to do many stuff in the game like walking, jumping, and switching dimension thanks to the following scripts.
 
 |  Script       | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
@@ -28,43 +28,31 @@ You are able to do so many stuff in the game like walking, running, building, cr
 
 <br>
 
-
-## 🔴About
-Sive 2, depicting a vast survival game where you need to manage your hunger and thirst to continue your journey. You objective is Hunt for your survivability and to escape the dangerous island. I forged the HUD, inventory system, hotbar shortcut, Drag and drop handler, Slot generator, Item scriptable object, and also created the terrain. Here's a small portion details about Sive2 development presented
+## 👤Developer & Roles
+- Jeslyn Marianne Djunaidy (Game Designer - Programmer - Artist - Sound Engineer)
 <br>
 
 ## 🕹️Play Game
 Currently in development phase
 <br>
 
-## 👤Developer & Contributions
-- Nicholas Van Lukman (Game Programmer)
+## 🔴About
+Dimension Switcher is a 2D & 3D platformer game where you can try and play a level to enjoy the rhythm of a personally made music. Your objective is simple, to find Cooper the dog that is hiding somewhere in the level. I created all the scripts, assets, music and also created the level design. Here are some details about Run n Beat's development
 <br>
 
 ## 📂Files description
 
 ```
-├── Sive2                             # Contain everything needed for Please Survive to works.
-   ├── .vscode                        # Contains configuration files for Visual Studio Code (VSCode) when it's used as the code editor for the project.
-      ├── extensions.json             # Contains settings and configurations for debugging, code formatting, and IntelliSense. This folder is related to Visual Studio Code integration.
-      ├── launch.json                 # Contains the configuration necessary to start debugging Unity C# scripts within VSCode.                     
-      ├── setting.json                # Contains workspace-specific settings for VSCode that are applied when working within the Unity project.
-   ├── Assets                         # Contains every assets that have been worked with unity to create the game like the scripts and the art.
-      ├── Art                         # Contains all the game art like the sprites, background, even the character.
-      ├── Animation                   # Contains every animation clip and animator controller that played when the game start.
-      ├── Sounds and Music            # Contains every sound used for the game like music and sound effects.
+├── Dimension Switcher                # Contains everything needed for Run n Beat to work.
+   ├── Assets                         # Contains every assets that are integrated with unity to create the game, like the scripts and the art.
+      ├── Animations                  # Contains every animation clip and animator controller that is used for the game.
+      ├── Fonts                       # Contains every fonts used to the display the text in the game.
+      ├── Images                      # Contains all the game art like the sprites used for the game.
+      ├── Materials&Shaders           # Contains the materials and shader graphs needed for the 3D models in the game.
+      ├── Music&Sounds                # Contains every sound used for the game like music and sound effects.
       ├── Scripts                     # Contains all scripts needed to make the gane get goings like PlayerMovement scripts.
-      ├── Prefabs                     # Contains every pre-configured, reusable game object that you can instantiate (create copies of) in your game scene.
+      ├── Prefabs                     # Contains every reusable game object that will be instantiated in the game scene.
       ├── Scenes                      # Contains all scenes that exist in the game for it to interconnected with each other like MainMenu, Gameplay, etc
-      ├── ThirdParty Packages         # Contains the Package Manager from unity registry or unity asset store assets for game purposes.
-      ├── Items                       # Contains items in game survival, Saved data as scriptableobject for easier sorting out.
-      ├── Recipes                     # Contains recipe for the survival game and the scriptableobject data to match the craftable tools.
-      ├── Models                      # Contains models for every 3D object in the game like the drop bags, the fps arms, even storage box.
-   ├── Packages                       # Contains game packages that responsible for managing external libraries and packages used in your project.
-      ├── Manifest.json               # Contains the lists of all the packages that your project depends on and their versions.
-      ├── Packages-lock.json          # Contains packages that ensuring your project always uses the same versions of all dependencies and their sub-dependencies.
-   ├── Project Settings               # Contains the configuration of your game to control the quality settings, icon, or even the cursor settings
-├── README.md                         # The description of Please Survive file from About til the developers and the contribution for this game.
 ```
       
 
@@ -77,10 +65,8 @@ The following controls are bound in-game, for gameplay and testing.
 | Key Binding       | Function          |
 | ----------------- | ----------------- |
 | W,A,S,D           | Standard movement |
-| Tab             | Inventory              |
 | Space             | Jump           |
-| R             | Reload             |
-| Left Ctrl             | Crouch              |
-| Mouse Click             | Craft, Shoot, etc              |
+| E             | Switch dimension           |
+| Escape             | Pause           |
 
 <br>
