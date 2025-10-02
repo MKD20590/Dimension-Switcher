@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour
 {
-    AudioSource bgm;
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private Slider loadingBar;
     [SerializeField] private Animator loadingScreen;
@@ -15,7 +14,6 @@ public class Loading : MonoBehaviour
     bool stillLoading = false;
     private void Awake()
     {
-        bgm = GameObject.Find("bgm_loop").GetComponent<AudioSource>();
         if(instance == null)
         {
             instance = this;
@@ -29,22 +27,18 @@ public class Loading : MonoBehaviour
     }
     private void Update()
     {
-        if (!bgm)
+        if (stillLoading && AudioListener.volume > 0)
         {
-            bgm = GameObject.Find("bgm_loop").GetComponent<AudioSource>();
+            AudioListener.volume -= 0.02f;
         }
-        if (bgm && stillLoading && bgm.volume > 0)
-        {
-            bgm.volume -= 0.02f;
-        }
-        else if(bgm && stillLoading && !startLoading && bgm.volume <= 0)
+        else if(stillLoading && !startLoading && AudioListener.volume <= 0)
         {
             startLoading = true;
             StartCoroutine(LoadSceneAsynchronously(lvl));
         }
-        if (bgm && !stillLoading && bgm.volume < 0.5f)
+        if (!stillLoading && AudioListener.volume < 0.5f)
         {
-            bgm.volume += 0.01f;
+            AudioListener.volume += 0.01f;
         }
     }
 
@@ -59,7 +53,6 @@ public class Loading : MonoBehaviour
     public void LoadScene()
     {
         stillLoading = true;
-        //StartCoroutine(LoadSceneAsynchronously(lvl));
     }
     IEnumerator LoadSceneAsynchronously(int levelIdx)
     {
@@ -67,7 +60,6 @@ public class Loading : MonoBehaviour
         while (!operation.isDone)
         {
             loadingBar.value = operation.progress;
-            //Debug.Log(operation.progress);
             yield return null;
         }
         stillLoading = false;

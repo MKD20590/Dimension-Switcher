@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 using UnityEngine;
 using System;
 
-public class titleSwitchButton : MonoBehaviour
+public class TitleSwitchButton : MonoBehaviour
 {
     [SerializeField] private Animator titleTextAnimator;
     [SerializeField] private AudioSource bgm;

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    Loading load;
+    Loading loading;
     [Header("Animator")]
     [SerializeField] private Animator daisy;
     [SerializeField] private Animator cooper;
@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        load = FindObjectOfType<Loading>();
+        loading = Loading.instance;
         cameraManager = FindObjectOfType<CameraManager>();
         Time.timeScale = 1;
         AudioListener.pause = false;
@@ -72,7 +72,7 @@ public class MenuManager : MonoBehaviour
     }
     public void StartLevel(int level)
     {
-        load.StartAnim(level);
+        loading.StartAnim(level);
     }
     public void BackTitle()
     {

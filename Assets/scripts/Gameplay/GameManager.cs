@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = false;
         Time.timeScale = 1;
-        loading = FindObjectOfType<Loading>();
+        loading = Loading.instance;
         pauseMenu.SetActive(false);
         //audio settings
         bgm_slider.value = PlayerPrefs.GetFloat("bgm");

@@ -24,6 +24,7 @@ public class Player : Entity, IDamageable
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private bool isGrounded;
+    [SerializeField] private bool isCollidingWithGround;
     [SerializeField] private float playerToGroundDistance;
 
     [Header("Rigidbodies")]
@@ -54,7 +55,6 @@ public class Player : Entity, IDamageable
     Animator animator;
 
     bool isTransitioning = false;
-    bool isCollidingWithGround = false;
     bool is2D = false;
     bool is3D = true;
 
@@ -83,18 +83,18 @@ public class Player : Entity, IDamageable
 
         if (!isDimension2D && playerToGroundDistance <= 0.15f)
         {
-            isGrounded = true;
+            isGrounded = true || isCollidingWithGround;
         }
         else if(!isDimension2D && playerToGroundDistance > 0.15f)
         {
-            isGrounded = false;
+            isGrounded = false || isCollidingWithGround;
         }
 
         //2D ground check
         else if(isDimension2D)
         {
             playerToGroundDistance = 100;
-            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, LayerMask.GetMask("Ground"));
+            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, LayerMask.GetMask("Ground")) || isCollidingWithGround;
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -313,15 +313,31 @@ public class Player : Entity, IDamageable
         }
     }
 
+    //collision - trigger detection
     private void OnTriggerEnter(Collider collision)
     {
-        collisionController(collision, null);
+        CollisionController(collision, null);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collisionController(null,collision);
+        CollisionController(null,collision);
     }
-    void collisionController(Collider collision3D, Collider2D collision2D)
+    //unGrounded
+    private void OnTriggerExit(Collider collision)
+    {
+        if(collision != null && collision.tag == "Ground")
+        {
+            isCollidingWithGround = false;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision != null && collision.tag == "Ground")
+        {
+            isCollidingWithGround = false;
+        }
+    }
+    void CollisionController(Collider collision3D, Collider2D collision2D)
     {
         if (collision3D != null && collision3D.tag == "Obstacle"
             ||
@@ -340,10 +356,10 @@ public class Player : Entity, IDamageable
             gameManager.Win();
         }
         else if (collision3D != null && collision3D.tag == "Ground"
-            ||
-            collision2D != null && collision2D.tag == "Ground")
+                ||
+                collision2D != null && collision2D.tag == "Ground")
         {
-            gameManager.Win();
+            isCollidingWithGround = true;
         }
     }
 }
