@@ -33,7 +33,7 @@ You are able to walk, jump, and switch dimension because of the following script
 <br>
 
 ## 🕹️Play Game
-Currently in development phase
+Currently finished phase (waiting for update)
 <br>
 
 ## 🔴About
